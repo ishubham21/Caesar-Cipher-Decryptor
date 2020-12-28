@@ -1,10 +1,12 @@
 def lassoletter(ltr, shftAmt):
-    #converting letter to lower case and
-    #fetching it's ascii value
-    letterCode = ord(ltr.lower())
-    
-    #adding the shift to ascii value
-    decodedLetter = letterCode + shftAmt
+   
+   ltrCode = ord(ltr.lower())
+   
+   Ascii = 97
 
-    return decodedLetter
+   alphabetSize = 26
 
+   trueCode = Ascii + (((ltrCode - Ascii) + shftAmt) % alphabetSize)
+   
+   decodedLtr = chr(trueCode)
+   return decodedLtr
